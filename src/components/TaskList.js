@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TaskCard } from "./TaskCard";
 import { BoxCard } from "./BoxCard";
+import './TaskList.css';
 
 export function TaskList() {
     const [tasks, setTasks] = useState([
@@ -16,7 +17,7 @@ export function TaskList() {
     }
 
     return (
-        <div>
+        <div className="tasklist">
             <h1>Task List</h1>
             <ul>
                 <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
