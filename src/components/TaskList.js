@@ -1,14 +1,9 @@
 import { useState } from "react";
 import { TaskCard } from "./TaskCard";
-import { BoxCard } from "./BoxCard";
 import './TaskList.css';
 
-export function TaskList() {
-    const [tasks, setTasks] = useState([
-        { id: 5271, name: 'Record React Lectures', completed: true },
-        { id: 7825, name: 'Edit React Lectures', completed: false },
-        { id: 8391, name: 'Watch Lectures', completed: false }
-    ]);
+export function TaskList({ tasks, setTasks }) {
+    
     const [show, setShow] = useState(true)
 
 
@@ -17,25 +12,18 @@ export function TaskList() {
     }
 
     return (
-        <div className="tasklist">
-            <h1>Task List</h1>
+        <section className="tasklist">
             <ul>
-                <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
+                <div className="header">
+                    <h1>Task List</h1>
+                    <button className='trigger' onClick={() => setShow(!show)}>{!show ? 'Show Task' : 'Hide Task'}</button>
+                </div>
                 {
                     show && tasks.map((task) => (
                         <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
                     ))
                 }
             </ul>
-            <BoxCard result="success">
-                <p className="title">Lorem ipsum dolor sit amet.</p>
-                <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, vel!</p>
-            </BoxCard>
-            <BoxCard result="warning">
-                <p className="title">Lorem ipsum dolor sit.</p>
-                <p className="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, eum odit! Labore eaque fuga repellat adipisci molestias quasi animi fugiat necessitatibus sunt vel, optio rem non quidem! Blanditiis cupiditate iusto omnis reprehenderit assumenda maxime, nam perferendis impedit libero odit eius eum aut cum ad, excepturi officiis repudiandae. Molestiae, eum cumque?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nulla?</p>
-            </BoxCard>
-        </div>
+        </section>
     )
 }
