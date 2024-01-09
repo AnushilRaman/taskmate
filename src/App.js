@@ -21,7 +21,8 @@ function App() {
         tasklist={tasklist}
         setTasklist={setTasklist}
         task={task}
-        setTask={setTask} />
+        setTask={setTask}
+      />
     </div>
   );
 }
