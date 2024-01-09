@@ -188,6 +188,10 @@ header .themeSelector .activeTheme{
   color: #D82148;
   cursor: pointer;
 }
+.error{
+  font-size: 18px;
+  color: #D82148;
+}
 
 @media only screen and (max-width: 800px) {
   .showTask li{

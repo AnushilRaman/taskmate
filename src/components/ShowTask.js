@@ -7,9 +7,9 @@ export function ShowTask({ tasklist, setTasklist }) {
             <div className='head'>
                 <div>
                     <span className='title'>Todo</span>
-                    <span className='count'>0</span>
+                    <span className='count'>{tasklist.length}</span>
                 </div>
-                <button className='clearAll'>Clear All</button>
+                <button className='clearAll' onClick={() => setTasklist([])}>Clear All</button>
             </div>
             <ul>
                 {
