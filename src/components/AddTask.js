@@ -65,7 +65,7 @@ export function AddTask({ tasklist, setTasklist, task, setTask }) {
 
             <form onSubmit={handleSubmit}>
                 <input type='text' name='task' value={task.name || ""} autoComplete='off' placeholder='Add Task' maxLength='25' onChange={eve => setTask({ ...task, name: eve.target.value })} />
-                <button type='submit'>AddTask</button>
+                <button type='submit'>{task.id? 'Update Task' :'Add Task'}</button>
             </form>
         </section>
     )
